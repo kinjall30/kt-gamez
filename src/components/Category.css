@@ -1,0 +1,95 @@
+.category {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--black1);
+  padding: 20px 0px;
+}
+.dropdown {
+  width: 200px;
+  margin: 100px auto;
+  position: relative;
+  left: 30%;
+  user-select: none;
+}
+.dropdown .dropdown-btn {
+  cursor: pointer;
+  position: relative;
+  padding: 15px 20px;
+  background-color: var(--red);
+  box-shadow: 3px 3px 10px 6px rgb(0, 0, 0, 0.06);
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.4em;
+}
+.dropdown .dropdown-content {
+  position: absolute;
+  background: var(--bluish);
+  top: 110%;
+  left: 0;
+  padding: 10px;
+  box-shadow: 3px 3px 10px 6px rgb(0, 0, 0, 0.06);
+  font-weight: 500;
+  color: #333;
+  border-radius: 0.4em;
+}
+
+.dropdown .dropdown-content .dropdown-item {
+  padding: 10px;
+  color: #fff;
+  /* background: palevioletred; */
+}
+.dropdown-item:hover {
+  background-color: var(--black1);
+  cursor: pointer;
+  border-radius: 0.4em;
+}
+.active-category {
+  position: absolute;
+  color: #fff;
+  padding-left: 60px;
+  font-size: 30px;
+  font-weight: bold;
+  top: 95%;
+ 
+}
+
+.line{
+  border: 2px solid var(--red);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-template-rows: 200px 200px;
+  grid-gap: 0.5em;
+  width: 100%;
+  text-align: center;
+}
+
+
+.card-inner-title {
+  width: 60%;
+  background-color: var(--bluish);
+  border-radius: 30px;
+  color: #fff;
+ margin-top: -20px;
+ margin-left: 50px;
+}
+.card-img img {
+  width: 200px;
+  height: 150px;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+}
+
+.card-img {
+  padding: 10px 30px;
+  transition: all 1s;
+}
+
+.card-img:hover{
+  transform: scale(1.2);
+}
