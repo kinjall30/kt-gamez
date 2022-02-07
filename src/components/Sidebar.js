@@ -34,9 +34,17 @@ function Sidebar() {
           <Link to="/playnwin" className="link">
             <li>
               <div className="side-logo">
+              <i class="fas fa-treasure-chest"></i>
+              </div>
+              <p id="side-title">PlayNWin</p>
+            </li>
+          </Link>
+          <Link to="/leaderboard" className="link">
+            <li>
+              <div className="side-logo">
                 <i class="fas fa-trophy-alt"></i>
               </div>
-              <p id="side-title">Play N Win</p>
+              <p id="side-title">Leaderboard</p>
             </li>
           </Link>
           <Link to="/profile" className="link">

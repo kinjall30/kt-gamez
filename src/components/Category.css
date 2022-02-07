@@ -1,20 +1,22 @@
 .category {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--black1);
-  padding: 20px 0px;
+  box-sizing: border-box;
+  /* background-color: cadetblue; */
+  /* width: 100vh; */
 }
 .dropdown {
   width: 200px;
   margin: 100px auto;
   position: relative;
-  left: 30%;
+  left: 38%;
   user-select: none;
 }
 .dropdown .dropdown-btn {
   cursor: pointer;
   position: relative;
-  padding: 15px 20px;
+  padding: 10px 20px;
+  text-align: center;
   background-color: var(--red);
   box-shadow: 3px 3px 10px 6px rgb(0, 0, 0, 0.06);
   font-weight: bold;
@@ -29,17 +31,17 @@
   background: var(--bluish);
   top: 110%;
   left: 0;
+  height: 30px;
   padding: 10px;
   box-shadow: 3px 3px 10px 6px rgb(0, 0, 0, 0.06);
   font-weight: 500;
   color: #333;
   border-radius: 0.4em;
+  z-index: 10;
 }
-
 .dropdown .dropdown-content .dropdown-item {
   padding: 10px;
   color: #fff;
-  /* background: palevioletred; */
 }
 .dropdown-item:hover {
   background-color: var(--black1);
@@ -48,48 +50,73 @@
 }
 .active-category {
   position: absolute;
-  color: #fff;
-  padding-left: 60px;
-  font-size: 30px;
-  font-weight: bold;
-  top: 95%;
- 
+  font-size: 2em;
+  color: white;
+  left: 20%;
+  border-bottom: 3px solid var(--red);
 }
-
-.line{
-  border: 2px solid var(--red);
-}
-
 .cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(100px, 1fr));
-  grid-template-rows: 200px 200px;
-  grid-gap: 0.5em;
+  grid-template-rows: repeat(4, minmax(280px, 1fr));
+  grid-gap: 2em;
   width: 100%;
   text-align: center;
+  position: relative;
 }
-
-
-.card-inner-title {
-  width: 60%;
-  background-color: var(--bluish);
-  border-radius: 30px;
-  color: #fff;
- margin-top: -20px;
- margin-left: 50px;
+.card-content {
+  background-color: #333;
+  padding: 0.5em;
+  height: 17em;
+  border-radius: 1em;
 }
-.card-img img {
-  width: 200px;
-  height: 150px;
-  box-sizing: border-box;
-  border-radius: 0.5em;
-}
-
 .card-img {
-  padding: 10px 30px;
   transition: all 1s;
 }
+.card-img img {
+  width: 250px;
+  height: 170px;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
 
-.card-img:hover{
-  transform: scale(1.2);
+.card-img:hover {
+  transform: scale(1.1);
+}
+.game-info {
+  position: relative;
+  bottom: 11.5em;
+  left: 1em;
+  z-index: 2;
+  color: rgb(199, 199, 199);
+  background-color: rgb(116, 116, 116);
+  opacity: 85%;
+  border-radius: 2em;
+  width: 10em;
+}
+.paragraphs {
+  text-transform: capitalize;
+  position: relative;
+  left: 25%;
+  bottom: 10%;
+  text-align: start;
+  color: #fff;
+  font-size: medium;
+  font-weight: bolder;
+}
+.paragraphs .category-image {
+  position: absolute;
+  left: -3em;
+}
+.paragraphs .category-image img {
+  width: 2em;
+  border-radius: 2em;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.category-genre {
+  margin-top: -10px !important ;
+  font-size: 0.9em;
 }

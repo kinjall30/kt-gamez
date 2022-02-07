@@ -1,51 +1,50 @@
 import React, { useState, useEffect } from "react";
+import action from "../asserts/categoryImages/action.png";
+import educational from "../asserts/categoryImages/educational.png";
+import puzzle from "../asserts/categoryImages/puzzle.png";
+import SportsAndRacing from "../asserts/categoryImages/racing.png";
+import arcade from "../asserts/categoryImages/arcade.png";
 import "./Category.css";
-import actimg1 from "../asserts/images/Action/battletankv2.png";
-import actimg2 from "../asserts/images/Action/carnivalducks.png";
-import actimg3 from "../asserts/images/Action/combattank.png";
-import actimg4 from "../asserts/images/Action/darkshooter.png";
-import actimg5 from "../asserts/images/Action/dollargrabber.png";
-import actimg6 from "../asserts/images/Action/gulffighter.png";
-import actimg7 from "../asserts/images/Action/homealone.png";
-import actimg8 from "../asserts/images/Action/monsterhit.png";
-
 function Category() {
   const [active, setActive] = useState(false);
   const [button, setButton] = useState("all");
+  const [categoryImage, setCategoryImage] = useState();
   const [data, setData] = useState([]);
-  // const [category , setCategory] =useState()
-  // const [title , setTitle] =useState()
 
   useEffect(async () => {
     const data = await fetch("https://ktgamez.com/storage/games.json");
     const items = await data.json();
     setData(items);
-  }, [fetch]);
+  }, [setData]);
 
   const handleClickAction = () => {
     setButton("Action");
+    setCategoryImage(action);
   };
   const handleClickAll = () => {
-    setButton("All");
+    setButton("all");
+    setCategoryImage(action);
   };
   const handleClicEducational = () => {
     setButton("Educational");
+    setCategoryImage(educational);
   };
   const handleClicArcade = () => {
     setButton("Arcade");
+    setCategoryImage(arcade);
   };
   const handleClicSports = () => {
     setButton("Sports & Racing");
+    setCategoryImage(SportsAndRacing);
   };
   const handleClicPuzzle = () => {
     setButton("Puzzle");
+    setCategoryImage(puzzle);
   };
 
   return (
     <div className="category">
-      <p className="active-category">{button} Games <hr className="line"/>
-      </p>
-      
+      <p className="active-category">{button} Games</p>
       <div className="dropdown">
         <div
           className="dropdown-btn"
@@ -53,8 +52,7 @@ function Category() {
             setActive(!active);
           }}
         >
-          {" "}
-          Categories
+          <h3> Categories </h3>
         </div>
         {active && (
           <div className="dropdown-content">
@@ -79,27 +77,64 @@ function Category() {
           </div>
         )}
       </div>
+
       <div className="cards">
         {data.map((data, key) => {
-          if (data.genre_name == button) {
+          // if ( key < 10 && button === 'all' || key <10 && button === data.genre_name ){
+          //or :  if(key < 10){return}
+          //even if tried to do this style= {{display : key <10 ? 'block' : 'none'}}
+
+          if (button === "all" && data.genre_status === "Active") {
             return (
               <div className="card-content" key={key}>
                 <div className="card-img">
-                  <img src={data.game_cover_url} alt="" />
+                  <img src={data.game_cover_url} alt={data.game_name} />
+                  <p className="game-info">kt points :100</p>
                 </div>
-                <div className="card-inner-title">
-                  <p>{data.game_name}</p>
+                <div className="paragraphs">
+                  <div className="category-image">
+                    <img
+                      src={data.game_cover_url}
+                      style={{
+                        borderRadius: "1em",
+                        width: "2em",
+                        height: "2em",
+                      }}
+                    />{" "}
+                  </div>
+                  <div className="card-inner-title">
+                    <p>{data.game_name}</p>
+                  </div>
+                  <div>
+                    <p className="category-genre">
+                      category : {data.genre_name}
+                    </p>
+                  </div>
                 </div>
               </div>
             );
-          } else if (button == "all") {
+          } else if (
+            button === data.genre_name &&
+            data.genre_status === "Active"
+          ) {
             return (
               <div className="card-content" key={key}>
                 <div className="card-img">
-                  <img src={data.game_cover_url} alt="" />
+                  <img src={data.game_cover_url} alt={data.game_name} />
+                  <p className="game-info">kt points :100</p>
                 </div>
-                <div className="card-inner-title">
-                  <p>{data.game_name}</p>
+                <div className="paragraphs">
+                  <div className="category-image">
+                    <img src={categoryImage} />{" "}
+                  </div>
+                  <div className="card-inner-title">
+                    <p>{data.game_name}</p>
+                  </div>
+                  <div>
+                    <p className="category-genre">
+                      category : {data.genre_name}
+                    </p>
+                  </div>
                 </div>
               </div>
             );
@@ -111,3 +146,7 @@ function Category() {
 }
 
 export default Category;
+/*     <div className="category-image"><img src={data.genre_name === 'Action' || data.genre_name === 'Educational' || 
+                        data.genre_name === 'Puzzle' || data.genre_name === 'Arcade'  ||
+                        data.genre_name === 'Sports & Racing'?data.game_cover_url  : null }/> </div>
+                        */

@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Play from "./pages/Play";
 import Playnwinpage from "./pages/Playnwinpage"
 import Profile from "./pages/Profile"
+import Leaderboard from "./pages/Leaderboard";
 import Sidebar from "./components/Sidebar";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/play" component={Play} />
           <Route path="/playnwin" component={Playnwinpage} />
           <Route path="/profile" component={Profile} />
+          <Route path="/leaderboard" component={Leaderboard}/>
         </Switch>
        
       </Router>

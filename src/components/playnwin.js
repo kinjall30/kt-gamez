@@ -13,24 +13,32 @@ function Playnwin() {
   return (
     <div className="play-n-win">
       <div className="anything">
-      <p className="play-n-win-title">Play N Win</p>
+        <p className="play-n-win-title">Play N Win</p>
       </div>
-      
-      
+
       <div className="team-area">
-      
         <div className="single-team">
           <img src={img1} alt="" />
+          <h5 className="down-text">Air Attack</h5>
           <div className="team-text">
-            <p>Air Attack</p>
+            {/* <p>Air Attack</p> */}
             <button className="play-btn">play</button>
           </div>
         </div>
 
         <div className="single-team">
           <img src={img2} alt="" />
+          <h5 className="down-text">Boom</h5>
           <div className="team-text">
-            <p>Boom</p>
+            {/* <p>Boom</p> */}
+            <button className="play-btn">play</button>
+          </div>
+        </div>
+
+        <div className="single-team">
+          <img src={img4} alt="" />
+          <div className="team-text">
+            <p>Line Play</p>
             <button className="play-btn">play</button>
           </div>
         </div>

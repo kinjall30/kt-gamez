@@ -81,7 +81,7 @@
   padding: 0 50px;
   font-size: 25px;
   border-bottom: 3px solid var(--red);
-  width: 95px;
+  width: 143px;
   text-align: left;
 }
 .anything {
@@ -109,7 +109,7 @@
 }
 
 .single-team {
-  width: 50px;
+  width: 40px;
   height: 190px;
   padding: 0 50px;
   margin: 0;
@@ -117,12 +117,13 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  transition: 0.6s ease-out;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .single-team:hover {
-  transform: translateY(10px);
+  transform: translateY(5px);
 }
 
 .single-team:hover:before {
@@ -155,11 +156,13 @@
   top: 0;
   left: 0;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .single-team .team-text {
   position: relative;
   bottom: 10px;
+  right: 20px;
   z-index: 3;
   color: #ffffff;
   font-size: 30px;
@@ -185,4 +188,16 @@
 .play-btn:hover {
   background-color: none;
   border: var(--red);
+}
+
+.down-text{
+  color: #ffffff;
+  background-color: var(--black1);
+  position: absolute;
+  top: 95%;
+  text-align: center;
+  left: 5%;
+  padding: 5px;
+  border-radius: 5px;
+  width: 80%;
 }
